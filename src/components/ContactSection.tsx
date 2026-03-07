@@ -67,24 +67,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="gold-divider w-full my-6" />
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://www.massage-palace.com/booking-calendar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-primary text-primary-foreground font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-crimson-light transition-all text-center"
-              >
-                Book Online
-              </a>
-              <a
-                href="tel:2035246553"
-                className="px-8 py-3 border border-secondary text-secondary font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-secondary hover:text-secondary-foreground transition-all text-center"
-              >
-                Call Us
-              </a>
-            </div>
           </motion.div>
 
           {/* Map */}

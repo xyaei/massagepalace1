@@ -1,32 +1,26 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-spa.jpg";
 
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src="/massage-palace-interior.png"
           alt="Massage Palace luxury spa interior"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/75 to-transparent" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <p className="font-accent text-lg md:text-xl text-secondary tracking-[0.3em] uppercase mb-4">
-            Stamford's Premier Wellness Destination
-          </p>
-        </motion.div>
-
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 opacity-[0.06] md:opacity-[0.08] pointer-events-none select-none">
+          <img
+            src="/massage-palace-logo.png"
+            alt="Massage Palace emblem"
+            className="w-64 h-64 object-contain"
+          />
+        </div>
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,10 +41,14 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="font-accent text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto italic"
+          className="font-accent text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto italic leading-relaxed space-y-1"
         >
-          Experience the art of relaxation in our 5,000+ sq ft luxury spa. 
-          Professional licensed therapists, serene ambiance, and transformative treatments await.
+          <span className="block">
+            Where tension dissolves and the body remembers what it feels like to be truly at rest.
+          </span>
+          <span className="block">
+            Experience the art of relaxation in our 5,000+ sq ft luxury spa.
+          </span>
         </motion.p>
 
         <motion.div
@@ -63,9 +61,9 @@ const HeroSection = () => {
             href="https://www.massage-palace.com/booking-calendar"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-10 py-4 bg-primary text-primary-foreground font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-crimson-light transition-all duration-300 shadow-crimson"
+            className="px-10 py-4 bg-secondary text-secondary-foreground font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-gold-light hover:text-background transition-all duration-300 shadow-gold"
           >
-            Book Your Experience
+            Reserve Your Session
           </a>
           <a
             href="#services"
@@ -76,16 +74,6 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-secondary/40 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-secondary/60 rounded-full" />
-        </div>
-      </motion.div>
     </section>
   );
 };

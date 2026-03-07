@@ -14,10 +14,24 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="font-display text-2xl font-bold text-gradient-gold">
-          Massage Palace
+        <a href="#home" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-full bg-card/80 border border-crimson/70 flex items-center justify-center overflow-hidden">
+            <img
+              src="/massage-palace-logo.png"
+              alt="Massage Palace logo"
+              className="w-9 h-9 object-contain mix-blend-screen opacity-95"
+            />
+          </div>
+          <div className="flex flex-col items-start leading-tight">
+            <span className="font-display text-lg font-semibold tracking-[0.25em] text-gradient-gold uppercase">
+              Massage Palace
+            </span>
+            <span className="font-accent text-[0.6rem] tracking-[0.35em] text-crimson-light uppercase">
+              Professional Service
+            </span>
+          </div>
         </a>
 
         {/* Desktop */}

@@ -70,7 +70,7 @@ const MembershipSection = () => {
             <div className="text-center">
               <a
                 href="tel:2035246553"
-                className="inline-block px-12 py-4 bg-primary text-primary-foreground font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-crimson-light transition-all duration-300 shadow-crimson"
+                className="inline-block px-12 py-4 bg-secondary text-secondary-foreground font-body text-sm uppercase tracking-[0.2em] rounded-sm hover:bg-gold-light hover:text-background transition-all duration-300 shadow-gold"
               >
                 Become a Member — Call Now
               </a>

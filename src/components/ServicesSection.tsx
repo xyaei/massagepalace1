@@ -13,7 +13,7 @@ const services = [
   {
     title: "Body Massage",
     image: bodyMassageImg,
-    description: "A full-body therapeutic experience combining deep tissue techniques with heated volcanic stones. Our skilled therapists target tension and knots throughout your entire body.",
+    description: "A full-body therapeutic experience combining deep tissue techniques with heated stones. Our skilled therapists target tension and knots throughout your entire body.",
     includes: "Deep tissue massage, hot stone therapy, essential oil application",
     benefits: "Relieves chronic pain, reduces muscle tension, improves circulation, promotes deep relaxation, and enhances flexibility.",
     durations: "30 / 60 / 90 / 120 min",
@@ -64,7 +64,7 @@ const services = [
     description: "A quick yet effective seated massage perfect for targeting the back, shoulders, neck, and arms. Ideal for a rejuvenating break during a busy day.",
     includes: "Upper body massage, shoulder and neck focus, pressure point release",
     benefits: "Instant stress relief, reduces muscle stiffness, boosts energy, improves posture, and enhances mental clarity.",
-    durations: "10 min",
+    durations: "10 / 20 / 30 min",
   },
 ];
 
@@ -136,8 +136,7 @@ const ServicesSection = () => {
           </h2>
           <div className="gold-divider w-24 mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto font-accent text-lg italic">
-            Every treatment is performed by licensed professional therapists in our serene, 5,000+ sq ft spa.
-            Essential oil upgrades available — Lavender, Arnica, Ginger & more (+$12).
+            Essential oil upgrades are available — Lavender, Arnica, Ginger & more (+$12).
           </p>
         </motion.div>
 

@@ -59,7 +59,9 @@ const priceTables: PriceTable[] = [
   {
     title: "Chair Massage",
     rows: [
-      { duration: "10 min", cashReg: "$20", cash30: "$14", cash50: "$10", creditReg: "$2", credit30: "$16", credit50: "$12" },
+      { duration: "10 min", cashReg: "$20", cash30: "$14", cash50: "$10", creditReg: "$22", credit30: "$16", credit50: "$12" },
+      { duration: "20 min", cashReg: "$36", cash30: "$25", cash50: "$18", creditReg: "$38", credit30: "$27", credit50: "$19" },
+      { duration: "30 min", cashReg: "$50", cash30: "$35", cash50: "$25", creditReg: "$52", credit30: "$37", credit50: "$26" },
     ],
   },
 ];
@@ -141,9 +143,6 @@ const PricingSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
-            Transparent Pricing
-          </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Price List
           </h2>
@@ -166,9 +165,12 @@ const PricingSection = () => {
           animate={comboInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="font-display text-3xl font-bold text-gradient-gold text-center mb-8">
+          <h3 className="font-display text-3xl font-bold text-gradient-gold text-center mb-4">
             Combo Specials
           </h3>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8 font-accent italic">
+            Bundle two treatments for a deeper experience at a better value.
+          </p>
           <div className="bg-card border border-border rounded-sm overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
