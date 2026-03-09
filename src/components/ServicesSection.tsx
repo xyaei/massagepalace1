@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import bodyMassageImg from "@/assets/body-massage.jpg";
 import footMassageImg from "@/assets/foot-massage.jpg";
 import waterHeadImg from "@/assets/water-head-therapy.jpg";
@@ -68,58 +67,23 @@ const services = [
   },
 ];
 
-const ServiceCard = ({ service, index }: { service: typeof services[0]; index: number }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.1 }}
-      className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-secondary/40 transition-all duration-500"
-    >
-      <div className="relative h-64 overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="font-accent text-xs uppercase tracking-[0.2em] text-secondary">
-            {service.durations}
-          </p>
-        </div>
-      </div>
-
-      <div className="p-6">
-        <h3 className="font-display text-2xl font-semibold text-gradient-gold mb-3">
-          {service.title}
-        </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-          {service.description}
-        </p>
-        <div className="mb-3">
-          <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Includes</p>
-          <p className="text-muted-foreground text-sm">{service.includes}</p>
-        </div>
-        <div>
-          <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Benefits</p>
-          <p className="text-muted-foreground text-sm">{service.benefits}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 const ServicesSection = () => {
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true });
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const currentService = services[activeIndex];
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+  };
 
   return (
-    <section id="services" className="py-24 bg-gradient-dark">
+    <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           ref={headerRef}
@@ -134,16 +98,94 @@ const ServicesSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Our Services
           </h2>
-          <div className="gold-divider w-24 mx-auto mb-6" />
+          <div className="gold-divider w-24 mx-auto mb-3" />
           <p className="text-muted-foreground max-w-2xl mx-auto font-accent text-lg italic">
             Essential oil upgrades are available — Lavender, Arnica, Ginger & more (+$12).
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentService.title}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.4 }}
+              className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-secondary/40 transition-all duration-500"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-80 overflow-hidden">
+                  <img
+                    src={currentService.image}
+                    alt={currentService.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="font-accent text-xs uppercase tracking-[0.2em] text-secondary">
+                      {currentService.durations}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-6 lg:p-8 flex flex-col justify-between">
+                  <div className="mb-4 lg:mb-6">
+                    <p className="font-accent text-xs uppercase tracking-[0.3em] text-secondary mb-2">
+                      {activeIndex + 1} / {services.length}
+                    </p>
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-gradient-gold mb-3 text-left">
+                      {currentService.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
+                      {currentService.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Includes</p>
+                      <p className="text-muted-foreground text-sm md:text-base">{currentService.includes}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Benefits</p>
+                      <p className="text-muted-foreground text-sm md:text-base">{currentService.benefits}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="mt-6 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handlePrev}
+                className="px-4 py-2 border border-secondary text-secondary text-xs uppercase tracking-[0.2em] rounded-sm hover:bg-secondary hover:text-secondary-foreground transition-colors"
+              >
+                Prev
+              </button>
+              <button
+                onClick={handleNext}
+                className="px-4 py-2 bg-secondary text-secondary-foreground text-xs uppercase tracking-[0.2em] rounded-sm hover:bg-gold-light hover:text-background transition-colors"
+              >
+                Next
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              {services.map((service, index) => (
+                <button
+                  key={service.title}
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-1.5 rounded-full transition-all ${
+                    index === activeIndex ? "w-6 bg-secondary" : "w-2 bg-border hover:bg-secondary/60"
+                  }`}
+                  aria-label={service.title}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

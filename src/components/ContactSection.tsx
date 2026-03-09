@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, Facebook, Music2, Mail } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -16,16 +16,16 @@ const ContactSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
+          <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-2">
             Find Us
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Visit Massage Palace
           </h2>
-          <div className="gold-divider w-24 mx-auto" />
+          <div className="gold-divider w-24 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -67,6 +67,51 @@ const ContactSection = () => {
               </div>
             </div>
 
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-sm bg-muted flex items-center justify-center flex-shrink-0">
+                <Mail className="w-5 h-5 text-secondary" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">Socials</h3>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="mailto:massagepalacect@gmail.com"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-secondary hover:bg-border transition-colors"
+                    aria-label="Email Massage Palace"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/massage_palacect/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-secondary hover:bg-border transition-colors"
+                    aria-label="Massage Palace on Instagram"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/stamford.palace"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-secondary hover:bg-border transition-colors"
+                    aria-label="Massage Palace on Facebook"
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@massagepalacect"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-secondary hover:bg-border transition-colors"
+                    aria-label="Massage Palace on TikTok"
+                  >
+                    <Music2 className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </motion.div>
 
           {/* Map */}
@@ -78,7 +123,7 @@ const ContactSection = () => {
           >
             <iframe
               title="Massage Palace Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.7!2d-73.5387!3d41.0534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2a1e1c4e8d5e1%3A0x1234567890abcdef!2s2111+Summer+St%2C+Stamford%2C+CT+06905!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps?q=Massage+Palace,+2111+Summer+St,+Stamford,+CT+06905&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

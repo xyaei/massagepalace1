@@ -18,20 +18,20 @@ interface PriceTable {
 
 const priceTables: PriceTable[] = [
   {
-    title: "Foot Massage",
-    rows: [
-      { duration: "30 min", cashReg: "$58", cash30: "$40", cash50: "$29", creditReg: "$61", credit30: "$43", credit50: "$32" },
-      { duration: "60 min", cashReg: "$90", cash30: "$63", cash50: "$45", creditReg: "$94", credit30: "$67", credit50: "$48" },
-      { duration: "90 min", cashReg: "$128", cash30: "$89", cash50: "$64", creditReg: "$132", credit30: "$93", credit50: "$67" },
-    ],
-  },
-  {
     title: "Body Massage",
     rows: [
       { duration: "30 min", cashReg: "$60", cash30: "$42", cash50: "$30", creditReg: "$63", credit30: "$45", credit50: "$33" },
       { duration: "60 min", cashReg: "$98", cash30: "$68", cash50: "$49", creditReg: "$98", credit30: "$71", credit50: "$52" },
       { duration: "90 min", cashReg: "$142", cash30: "$99", cash50: "$71", creditReg: "$146", credit30: "$103", credit50: "$74" },
       { duration: "120 min", cashReg: "$184", cash30: "$131", cash50: "$92", creditReg: "$189", credit30: "$135", credit50: "$96" },
+    ],
+  },
+  {
+    title: "Foot Massage",
+    rows: [
+      { duration: "30 min", cashReg: "$58", cash30: "$40", cash50: "$29", creditReg: "$61", credit30: "$43", credit50: "$32" },
+      { duration: "60 min", cashReg: "$90", cash30: "$63", cash50: "$45", creditReg: "$94", credit30: "$67", credit50: "$48" },
+      { duration: "90 min", cashReg: "$128", cash30: "$89", cash50: "$64", creditReg: "$132", credit30: "$93", credit50: "$67" },
     ],
   },
   {
@@ -88,21 +88,21 @@ const PriceTableComponent = ({ table, index }: { table: PriceTable; index: numbe
       className="bg-card border border-border rounded-sm overflow-hidden"
     >
       <div className="bg-muted px-6 py-4 border-b border-border">
-        <h3 className="font-display text-xl font-semibold text-gradient-gold">{table.title}</h3>
+        <h3 className="font-display text-xl font-semibold text-gradient-gold text-center">{table.title}</h3>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border">
               <th className="px-4 py-3 text-left text-muted-foreground font-body text-xs uppercase tracking-wider"></th>
-              <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider border-r border-border">Cash</th>
+              <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider">Cash</th>
               <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider">Credit</th>
             </tr>
             <tr className="border-b border-border text-muted-foreground text-xs">
               <th className="px-4 py-2 text-left"></th>
               <th className="px-3 py-2 text-center">Reg.</th>
               <th className="px-3 py-2 text-center">30%</th>
-              <th className="px-3 py-2 text-center border-r border-border">50%</th>
+              <th className="px-3 py-2 text-center">50%</th>
               <th className="px-3 py-2 text-center">Reg.</th>
               <th className="px-3 py-2 text-center">30%</th>
               <th className="px-3 py-2 text-center">50%</th>
@@ -114,7 +114,7 @@ const PriceTableComponent = ({ table, index }: { table: PriceTable; index: numbe
                 <td className="px-4 py-3 font-semibold text-foreground">{row.duration}</td>
                 <td className="px-3 py-3 text-center text-foreground">{row.cashReg}</td>
                 <td className="px-3 py-3 text-center text-secondary">{row.cash30}</td>
-                <td className="px-3 py-3 text-center text-primary font-semibold border-r border-border">{row.cash50}</td>
+                <td className="px-3 py-3 text-center text-primary font-semibold">{row.cash50}</td>
                 <td className="px-3 py-3 text-center text-foreground">{row.creditReg}</td>
                 <td className="px-3 py-3 text-center text-secondary">{row.credit30}</td>
                 <td className="px-3 py-3 text-center text-primary font-semibold">{row.credit50}</td>
@@ -146,13 +146,13 @@ const PricingSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Price List
           </h2>
-          <div className="gold-divider w-24 mx-auto mb-6" />
+          <div className="gold-divider w-24 mx-auto mb-3" />
           <p className="text-muted-foreground max-w-xl mx-auto">
             Members enjoy 50–60% off all services. Friends & family get 30–45% off.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           {priceTables.map((table, i) => (
             <PriceTableComponent key={table.title} table={table} index={i} />
           ))}
@@ -165,19 +165,19 @@ const PricingSection = () => {
           animate={comboInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="font-display text-3xl font-bold text-gradient-gold text-center mb-4">
+          <h3 className="font-display text-4xl font-bold text-gradient-gold text-center mb-6">
             Combo Specials
           </h3>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8 font-accent italic">
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8 font-accent italic text-lg">
             Bundle two treatments for a deeper experience at a better value.
           </p>
-          <div className="bg-card border border-border rounded-sm overflow-x-auto">
+          <div className="bg-card border border-border rounded-sm overflow-x-auto max-w-4xl mx-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
                   <th className="px-4 py-3 text-left"></th>
-                  <th className="px-4 py-3 text-left text-muted-foreground font-body text-xs uppercase tracking-wider">Combo</th>
-                  <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider border-r border-border">Cash</th>
+                  <th className="px-4 py-3 text-left text-muted-foreground font-body text-xs uppercase tracking-wider"></th>
+                  <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider">Cash</th>
                   <th colSpan={3} className="px-4 py-2 text-center text-secondary font-body text-xs uppercase tracking-wider">Credit</th>
                 </tr>
                 <tr className="border-b border-border text-muted-foreground text-xs">
@@ -185,7 +185,7 @@ const PricingSection = () => {
                   <th className="px-4 py-2"></th>
                   <th className="px-3 py-2 text-center">Reg.</th>
                   <th className="px-3 py-2 text-center">48%</th>
-                  <th className="px-3 py-2 text-center border-r border-border">61%+</th>
+                  <th className="px-3 py-2 text-center">61%+</th>
                   <th className="px-3 py-2 text-center">Reg.</th>
                   <th className="px-3 py-2 text-center">48%</th>
                   <th className="px-3 py-2 text-center">61%+</th>
@@ -198,7 +198,7 @@ const PricingSection = () => {
                     <td className="px-4 py-3 text-foreground text-xs">{combo.name}</td>
                     <td className="px-3 py-3 text-center text-foreground">{combo.cashReg}</td>
                     <td className="px-3 py-3 text-center text-secondary">{combo.cash48}</td>
-                    <td className="px-3 py-3 text-center text-primary font-semibold border-r border-border">{combo.cash61}</td>
+                    <td className="px-3 py-3 text-center text-primary font-semibold">{combo.cash61}</td>
                     <td className="px-3 py-3 text-center text-foreground">{combo.creditReg}</td>
                     <td className="px-3 py-3 text-center text-secondary">{combo.credit48}</td>
                     <td className="px-3 py-3 text-center text-primary font-semibold">{combo.credit61}</td>
@@ -208,10 +208,6 @@ const PricingSection = () => {
             </table>
           </div>
         </motion.div>
-
-        <p className="text-center text-muted-foreground mt-8 font-accent italic">
-          Essential Oil Massage: Lavender / Arnica / Ginger & more — $12 Extra
-        </p>
       </div>
     </section>
   );

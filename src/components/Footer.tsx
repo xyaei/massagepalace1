@@ -24,7 +24,7 @@ const Footer = () => {
               VISIT
             </a>
             <a
-              href="https://www.massage-palace.com/booking-calendar"
+              href="https://go.bychronos.com/l/stamford-06905-massage-palace-804792/a/services?p=g&rwg_token=AFd1xnH_KrVdfU_ZkCTFH5_tZLkrQNfGAPrNQDDRYlYDwsHLXJHzaf0-50sitvzS6NUH4H9kfA4shjCqhNXkg7XkW5k-lY3Nxw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-secondary transition-colors"
@@ -37,6 +37,10 @@ const Footer = () => {
             © 2026 Massage Palace · 2111 Summer Street, Stamford CT ·{" "}
             <a href="tel:2035246553" className="hover:text-secondary transition-colors">
               (203) 524-6553
+            </a>{" "}
+            ·{" "}
+            <a href="mailto:massagepalacect@gmail.com" className="hover:text-secondary transition-colors">
+              massagepalacect@gmail.com
             </a>
           </p>
         </div>

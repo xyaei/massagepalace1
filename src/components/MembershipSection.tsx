@@ -6,7 +6,7 @@ const perks = [
   { icon: Sparkles, title: "50–60% Off", desc: "On all services for yourself" },
   { icon: Users, title: "30–45% Off", desc: "For your friends & family" },
   { icon: Gift, title: "Gift Certificates", desc: "Available for all occasions" },
-  { icon: Crown, title: "Priority Booking", desc: "Skip the wait with VIP access" },
+  { icon: Crown, title: "Other Exclusive Benefits", desc: "Additional perks and seasonal offers." },
 ];
 
 const MembershipSection = () => {
@@ -30,10 +30,9 @@ const MembershipSection = () => {
             <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
               Exclusive Access
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
               Membership Program
             </h2>
-            <div className="gold-divider w-24 mx-auto mb-6" />
           </div>
 
           {/* Card */}
@@ -46,11 +45,11 @@ const MembershipSection = () => {
 
             <div className="text-center mb-10">
               <Crown className="w-12 h-12 text-secondary mx-auto mb-4" />
-              <div className="flex items-baseline justify-center gap-2 mb-2">
+              <div className="flex items-baseline justify-center gap-2 mb-4">
                 <span className="font-display text-6xl font-bold text-gradient-gold">$165</span>
                 <span className="text-muted-foreground font-accent text-xl">/year</span>
               </div>
-              <p className="text-muted-foreground font-accent text-lg italic">
+              <p className="text-muted-foreground font-accent text-lg italic mt-5">
                 Unlock premium savings on every visit
               </p>
             </div>
