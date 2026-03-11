@@ -1,10 +1,10 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import bodyMassageImg from "@/assets/body-massage.jpg";
-import footMassageImg from "@/assets/foot-massage.jpg";
+import bodyMassageImg from "@/assets/body-massage.png";
+import footMassageImg from "@/assets/foot-massage.png";
 import waterHeadImg from "@/assets/water-head-therapy.jpg";
-import headTherapyImg from "@/assets/head-therapy.jpg";
-import facialImg from "@/assets/facial.jpg";
+import headTherapyImg from "@/assets/head-therapy.png";
+import facialImg from "@/assets/facial.png";
 import seaMudImg from "@/assets/sea-mud-scrub.jpg";
 import chairMassageImg from "@/assets/chair-massage.jpg";
 
@@ -121,7 +121,6 @@ const ServicesSection = () => {
                     alt={currentService.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <p className="font-accent text-xs uppercase tracking-[0.2em] text-secondary">
                       {currentService.durations}
@@ -129,12 +128,12 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                <div className="p-6 lg:p-8 flex flex-col justify-between">
+                <div className="p-6 lg:p-8 flex flex-col justify-between text-left">
                   <div className="mb-4 lg:mb-6">
                     <p className="font-accent text-xs uppercase tracking-[0.3em] text-secondary mb-2">
                       {activeIndex + 1} / {services.length}
                     </p>
-                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-gradient-gold mb-3 text-left">
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-gradient-gold mb-3">
                       {currentService.title}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">

@@ -3,11 +3,11 @@ import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Membership", href: "#membership" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Membership", href: "/membership" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60">
       <div className="container mx-auto px-6 py-2 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group">
           <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
             <img
               src="/massage-palace-logo.png"

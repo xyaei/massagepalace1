@@ -33,6 +33,7 @@ const MembershipSection = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
               Membership Program
             </h2>
+            <div className="h-2" />
           </div>
 
           {/* Card */}

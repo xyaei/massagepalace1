@@ -19,19 +19,38 @@ const ContactSection = () => {
           <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-2">
             Find Us
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4 pb-1">
             Visit Massage Palace
           </h2>
           <div className="gold-divider w-24 mx-auto mt-6" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Info */}
+          {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="rounded-sm overflow-hidden border border-border h-[400px]"
+          >
+            <iframe
+              title="Massage Palace Location"
+              src="https://www.google.com/maps?q=Massage+Palace,+2111+Summer+St,+Stamford,+CT+06905&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
+
+          {/* Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-8 lg:pl-8"
           >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-sm bg-muted flex items-center justify-center flex-shrink-0">
@@ -112,25 +131,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-          </motion.div>
-
-          {/* Map */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="rounded-sm overflow-hidden border border-border h-[400px]"
-          >
-            <iframe
-              title="Massage Palace Location"
-              src="https://www.google.com/maps?q=Massage+Palace,+2111+Summer+St,+Stamford,+CT+06905&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
           </motion.div>
         </div>
       </div>

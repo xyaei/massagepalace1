@@ -125,3 +125,28 @@
   }
 
 }
+
+/* Themed scrollbar to match spa palette */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 4%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(43 60% 50%), hsl(43 50% 35%));
+  border-radius: 999px;
+  border: 2px solid hsl(0 0% 4%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(43 70% 65%), hsl(43 60% 50%));
+}
+
+/* Firefox scrollbar colors */
+html {
+  scrollbar-color: hsl(43 60% 50%) hsl(0 0% 4%);
+  scrollbar-width: thin;
+}
