@@ -24,16 +24,15 @@ const MembershipSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-12">
             <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
               Exclusive Access
             </p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-normal text-gradient-gold uppercase mb-6">
               Membership Program
             </h2>
-            <div className="h-2" />
           </div>
 
           {/* Card */}
@@ -47,7 +46,7 @@ const MembershipSection = () => {
             <div className="text-center mb-10">
               <Crown className="w-12 h-12 text-secondary mx-auto mb-4" />
               <div className="flex items-baseline justify-center gap-2 mb-4">
-                <span className="font-display text-6xl font-bold text-gradient-gold">$165</span>
+                <span className="font-display text-4xl font-bold text-gradient-gold">$165</span>
                 <span className="text-muted-foreground font-accent text-xl">/year</span>
               </div>
               <p className="text-muted-foreground font-accent text-lg italic mt-5">
