@@ -1,11 +1,11 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import bodyMassageImg from "@/assets/body-massage.png";
-import footMassageImg from "@/assets/foot-massage.png";
+import footMassageImg from "@/assets/foot-massage-new.png";
 import waterHeadImg from "@/assets/water-head-therapy.jpg";
-import headTherapyImg from "@/assets/head-therapy.png";
-import facialImg from "@/assets/facial.png";
-import seaMudImg from "@/assets/sea-mud-scrub.jpg";
+import headTherapyImg from "@/assets/head-therapy-new.png";
+import facialImg from "@/assets/facial-new.png";
+import seaMudImg from "@/assets/sea-mud-scrub-new.png";
 import chairMassageImg from "@/assets/chair-massage.jpg";
 
 const services = [
@@ -90,7 +90,7 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
             What We Offer
@@ -98,7 +98,7 @@ const ServicesSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Our Services
           </h2>
-          <div className="gold-divider w-24 mx-auto mb-3" />
+          <div className="gold-divider w-24 mx-auto mb-2" />
           <p className="text-muted-foreground max-w-2xl mx-auto font-accent text-lg italic">
             Essential oil upgrades are available — Lavender, Arnica, Ginger & more (+$12).
           </p>
@@ -114,41 +114,41 @@ const ServicesSection = () => {
               transition={{ duration: 0.4 }}
               className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-secondary/40 transition-all duration-500"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative h-64 lg:h-80 overflow-hidden">
+              <div className="flex flex-col">
+                <div className="relative h-52 lg:h-64 overflow-hidden">
                   <img
                     src={currentService.image}
                     alt={currentService.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-card via-card/60 to-transparent" />
+                  <div className="absolute top-3 left-4">
+                    <p className="font-accent text-xs uppercase tracking-[0.25em] text-secondary bg-background/70 px-3 py-1 rounded-sm">
+                      {activeIndex + 1} / {services.length}
+                    </p>
+                  </div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <p className="font-accent text-xs uppercase tracking-[0.2em] text-secondary">
+                    <p className="font-accent text-xs uppercase tracking-[0.2em] text-secondary text-center">
                       {currentService.durations}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 lg:p-8 flex flex-col justify-between text-left">
-                  <div className="mb-4 lg:mb-6">
-                    <p className="font-accent text-xs uppercase tracking-[0.3em] text-secondary mb-2">
-                      {activeIndex + 1} / {services.length}
-                    </p>
-                    <h3 className="font-display text-2xl md:text-3xl font-semibold text-gradient-gold mb-3">
-                      {currentService.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
-                      {currentService.description}
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
+                <div className="p-4 lg:p-5 flex flex-col gap-2 text-center">
+                  <h3 className="font-display text-xl md:text-2xl font-semibold text-gradient-gold">
+                    {currentService.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-snug max-w-2xl mx-auto">
+                    {currentService.description}
+                  </p>
+                  <div className="space-y-2 text-left max-w-2xl mx-auto">
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Includes</p>
-                      <p className="text-muted-foreground text-sm md:text-base">{currentService.includes}</p>
+                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-0.5">Includes</p>
+                      <p className="text-muted-foreground text-sm leading-snug">{currentService.includes}</p>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-1">Benefits</p>
-                      <p className="text-muted-foreground text-sm md:text-base">{currentService.benefits}</p>
+                      <p className="text-xs uppercase tracking-wider text-secondary font-semibold mb-0.5">Benefits</p>
+                      <p className="text-muted-foreground text-sm leading-snug">{currentService.benefits}</p>
                     </div>
                   </div>
                 </div>

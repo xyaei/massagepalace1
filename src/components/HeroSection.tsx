@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pt-24 md:pt-32 pb-20 md:pb-28">
       <div className="absolute inset-0">
         <img
           src="/massage-palace-interior.png"
@@ -14,7 +14,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mt-8 md:mt-12 text-center px-6 py-8 md:py-12 max-w-3xl md:max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 py-8 md:py-12 max-w-3xl md:max-w-4xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 10 }}
           transition={{ delay: 1.4, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="mt-32 flex justify-center"
+          className="mt-16 flex justify-center"
         >
           <ChevronDown className="w-7 h-7 text-gold-light" />
         </motion.div>
