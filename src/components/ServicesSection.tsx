@@ -1,4 +1,4 @@
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import bodyMassageImg from "@/assets/body-massage.png";
 import footMassageImg from "@/assets/foot-massage-new.png";
@@ -105,15 +105,10 @@ const ServicesSection = () => {
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentService.title}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.4 }}
-              className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-secondary/40 transition-all duration-500"
-            >
+          <div
+            key={currentService.title}
+            className="group relative bg-card rounded-sm overflow-hidden border border-border hover:border-secondary/40 transition-all duration-500"
+          >
               <div className="flex flex-col">
                 <div className="relative h-52 lg:h-64 overflow-hidden">
                   <img
@@ -153,8 +148,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+          </div>
 
           <div className="mt-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
