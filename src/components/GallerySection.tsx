@@ -60,7 +60,7 @@ const GallerySection = () => {
             </button>
 
             <div className="flex-1 flex items-stretch gap-2 md:gap-3 overflow-hidden">
-              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
+              <div className="hidden md:block flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
                 <img
                   src={images[getIndex(activeIndex, -1)]}
                   alt="Previous"
@@ -68,7 +68,7 @@ const GallerySection = () => {
                 />
               </div>
 
-              <div className="flex-[1.4] rounded-sm overflow-hidden border border-border relative h-80 md:h-96">
+              <div className="flex-1 md:flex-[1.4] rounded-sm overflow-hidden border border-border relative h-80 md:h-96 min-w-0">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={images[activeIndex]}
@@ -83,7 +83,7 @@ const GallerySection = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
+              <div className="hidden md:block flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
                 <img
                   src={images[getIndex(activeIndex, 1)]}
                   alt="Next"
