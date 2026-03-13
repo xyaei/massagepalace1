@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Membership", href: "/membership" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", to: "/" },
+  { label: "Services", to: "/#services" },
+  { label: "Pricing", to: "/pricing" },
+  { label: "Membership", to: "/membership" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/60">
       <div className="container mx-auto px-6 py-2 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="w-16 h-16 flex items-center justify-center overflow-hidden">
             <img
               src="/massage-palace-logo.png"
@@ -32,19 +33,19 @@ const Navbar = () => {
               Professional Service
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8 ml-6 flex-1">
           <div className="flex-1 flex items-center justify-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.to}
                 className="text-sm font-body uppercase tracking-widest text-muted-foreground hover:text-secondary transition-colors duration-300"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex items-center gap-5 mr-6">
@@ -86,14 +87,14 @@ const Navbar = () => {
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.to}
                   onClick={() => setIsOpen(false)}
                   className="text-sm font-body uppercase tracking-widest text-muted-foreground hover:text-secondary"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="tel:2035246553"

@@ -48,19 +48,19 @@ const GallerySection = () => {
           <div className="gold-divider w-24 mx-auto" />
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 md:gap-4">
             <button
               type="button"
               onClick={goToPrev}
-              className="flex-shrink-0 p-2 rounded-sm border border-border hover:border-secondary hover:text-secondary transition-colors"
+              className="flex-shrink-0 p-1.5 rounded-sm border border-border hover:border-secondary hover:text-secondary transition-colors"
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
 
             <div className="flex-1 flex items-stretch gap-2 md:gap-3 overflow-hidden">
-              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-72 md:h-80">
+              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
                 <img
                   src={images[getIndex(activeIndex, -1)]}
                   alt="Previous"
@@ -68,7 +68,7 @@ const GallerySection = () => {
                 />
               </div>
 
-              <div className="flex-[1.4] rounded-sm overflow-hidden border border-border relative h-72 md:h-80">
+              <div className="flex-[1.4] rounded-sm overflow-hidden border border-border relative h-80 md:h-96">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={images[activeIndex]}
@@ -83,7 +83,7 @@ const GallerySection = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-72 md:h-80">
+              <div className="flex-[0.8] rounded-sm overflow-hidden border border-border opacity-70 h-80 md:h-96">
                 <img
                   src={images[getIndex(activeIndex, 1)]}
                   alt="Next"
@@ -95,10 +95,10 @@ const GallerySection = () => {
             <button
               type="button"
               onClick={goToNext}
-              className="flex-shrink-0 p-2 rounded-sm border border-border hover:border-secondary hover:text-secondary transition-colors"
+              className="flex-shrink-0 p-1.5 rounded-sm border border-border hover:border-secondary hover:text-secondary transition-colors"
               aria-label="Next image"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
