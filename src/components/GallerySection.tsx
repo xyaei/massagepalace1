@@ -3,10 +3,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/gallery-1.png",
-  "/gallery-2.png",
   "/gallery-3.png",
+  "/gallery-8.png",
+  "/gallery-1.png",
+  "/gallery-6.png",
+  "/gallery-10.png",
   "/gallery-4.png",
+  "/gallery-9.png",
+  "/gallery-2.png",
+  "/gallery-7.png",
+  "/gallery-11.png",
   "/gallery-5.png",
 ];
 
@@ -30,7 +36,7 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-dark">
+    <section id="gallery" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
           <p className="font-accent text-lg text-secondary tracking-[0.3em] uppercase mb-3">
