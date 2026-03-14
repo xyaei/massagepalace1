@@ -45,6 +45,15 @@ const Footer = () => {
               massagepalacect@gmail.com
             </a>
           </p>
+          <p className="text-muted-foreground/60 text-[10px] mt-4">
+            <Link to="/privacy-policy" className="hover:text-muted-foreground/80 transition-colors">
+              Privacy Policy
+            </Link>
+            {" · "}
+            <Link to="/terms" className="hover:text-muted-foreground/80 transition-colors">
+              Terms & Conditions
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
